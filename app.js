@@ -1,7 +1,6 @@
 const fs = require('fs');
 const path = require('path');
 const vhost = require('fastify-vhost');
-const proxy = require('fastify-http-proxy');
 const fastify = require('fastify') ({
     logger: true,
     https: {
