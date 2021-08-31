@@ -1,15 +1,12 @@
-import { readFileSync } from 'fs';
-import { join } from 'path';
-import vhost from 'fastify-vhost';
-import Fastify from 'fastify';
-import fastifyStatic from 'fastify-static';
-
-const fastify = Fastify ({
+const fs = require('fs');
+const path = require('path');
+const vhost = require('fastify-vhost');
+const fastify = require('fastify') ({
     logger: true,
     https: {
         allowHTTP1: true,
-        key: readFileSync('/etc/letsencrypt/live/babasama.com/privkey.pem'),
-        cert: readFileSync('/etc/letsencrypt/live/babasama.com/fullchain.pem')
+        key: fs.readFileSync('/etc/letsencrypt/live/babasama.com/privkey.pem'),
+        cert: fs.readFileSync('/etc/letsencrypt/live/babasama.com/fullchain.pem')
     }
 });
 
@@ -17,8 +14,8 @@ fastify.get('/', async (request, reply) => {
     reply.code(200).send('Hello World');
 });
 
-fastify.register(fastifyStatic, {
-    root: join(__dirname, 'public'),
+fastify.register(require('fastify-static'), {
+    root: path.join(__dirname, 'public'),
     prefix: '/'
 });
 
