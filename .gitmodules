@@ -7,3 +7,6 @@
 [submodule "API"]
 	path = API
 	url = https://github.com/BaBaSaMa-Hosting/API.git
+[submodule "Expo-Notification-Test"]
+	path = Expo-Notification-Test
+	url = https://github.com/BaBaSaMa-Hosting/Expo-Notification-Test.git
