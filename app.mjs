@@ -2,6 +2,8 @@ import { readFileSync } from 'fs';
 import { join } from 'path';
 import vhost from 'fastify-vhost';
 import Fastify from 'fastify';
+import fastifyStatic from 'fastify-static';
+
 const fastify = Fastify ({
     logger: true,
     https: {
@@ -15,7 +17,7 @@ fastify.get('/', async (request, reply) => {
     reply.code(200).send('Hello World');
 });
 
-fastify.register(require('fastify-static'), {
+fastify.register(fastifyStatic, {
     root: join(__dirname, 'public'),
     prefix: '/'
 });
