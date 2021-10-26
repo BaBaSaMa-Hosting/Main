@@ -10,3 +10,6 @@
 [submodule "Expo-Notification-Test"]
 	path = Expo-Notification-Test
 	url = https://github.com/BaBaSaMa-Hosting/Expo-Notification-Test.git
+[submodule "Storage"]
+	path = Storage
+	url = https://github.com/BaBaSaMa-Hosting/Storage.git
