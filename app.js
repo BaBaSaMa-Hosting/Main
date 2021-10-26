@@ -39,6 +39,12 @@ fastify.register(vhost, {
     host: 'notification.babasama.com'
 });
 
+fastify.register(vhost, {
+    upstream: "http://babasama.com:3005",
+    host: 'storage.babasama.com'
+});
+
+
 const start = async() => {
     await fastify.register(require('middie'))
     fastify.use(require('cors')())
