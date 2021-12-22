@@ -7,12 +7,12 @@
 body {
   width: 100vw;
   height: 100vh;
-  font-family: "/font/FireSans-Regular.ttf";
+  font-family: "Fira Sans", sans-serif;
 }
 
 .link {
   text-decoration: none;
-  font-family: "/font/RobotoMono-VariableFont_wght.ttf";
+  font-family: "Roboto Mono", monospace;
   font-size: 1.5rem;
   color: #333;
   overflow: hidden;

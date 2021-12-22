@@ -22,7 +22,7 @@ body .container .row {
 }
 body .container .row .col:nth-child(1) span, body .container .row .col:nth-child(1) p, body .container .row .col:nth-child(1) strong {
   font-size: 4rem;
-  font-family: "/font/RobotoMono-VariableFont_wght.ttf";
+  font-family: "Roboto Mono", monospace;
 }
 body .container .row .col:nth-child(2) {
   display: flex;
