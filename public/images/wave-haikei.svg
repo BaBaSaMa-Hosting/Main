@@ -1,0 +1,6 @@
+<svg id="visual" viewBox="0 0 100% 100%" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
+    <path
+        d="M1380 1080L1328.3 990C1276.7 900 1173.3 720 1180.5 540C1187.7 360 1305.3 180 1364.2 90L1423 0L1920 0L1920 90C1920 180 1920 360 1920 540C1920 720 1920 900 1920 990L1920 1080Z"
+        fill="#0066FF" stroke-linecap="round" stroke-linejoin="miter"></path>
+</svg>

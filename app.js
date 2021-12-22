@@ -10,18 +10,13 @@ const fastify = require('fastify') ({
     }
 });
 
-fastify.get('/', async (request, reply) => {
-    reply.code(200).send('Hello World');
-});
-
 fastify.register(require('fastify-static'), {
     root: path.join(__dirname, 'public'),
     prefix: '/'
 });
 
-fastify.register(vhost, {
-    upstream: "http://babasama.com:3001",
-    host: 'portfolio.babasama.com'
+fastify.get('/', async (request, reply) => {
+    reply.code(200).sendFile('index.html');
 });
 
 fastify.register(vhost, {

@@ -1,0 +1,27 @@
+#navbar {
+  position: sticky;
+  width: 100%;
+  z-index: 2;
+}
+#navbar .navbar-container {
+  padding: 0 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#navbar .navbar-container .navbar-brand {
+  font-family: "/font/RobotoMono-VariableFont_wght.ttf";
+  cursor: pointer;
+}
+#navbar .navbar-container ul.navbar-list {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 0;
+}
+#navbar .navbar-container ul.navbar-list li.navbar-item {
+  list-style-type: none;
+  padding: 20px 10px;
+  position: relative;
+}
+
+/*# sourceMappingURL=nav.css.map */
