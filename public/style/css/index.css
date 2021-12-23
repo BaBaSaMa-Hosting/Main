@@ -54,9 +54,15 @@ body .container .row .col:nth-child(2) .image-frame img.image {
   border: 2px solid #333;
   border-radius: 12px;
   box-shadow: 4px 4px 10px 2px #333;
+  transition: 0.3s ease-in-out;
 }
 body .container .row .col:nth-child(2):hover .image-frame {
   width: 90%;
+}
+body .container .row .col:nth-child(2):hover .image-frame img.image {
+  border: 2px solid #f9f9f9;
+  border-radius: 16px;
+  box-shadow: 4px 4px 10px 2px #f9f9f9;
 }
 body .container .row .col:nth-child(2):hover .link {
   color: #f9f9f9;
