@@ -5,7 +5,7 @@ const intro_text = [
 
 const navigation_url_background = [
     {url: "/projects", text: 'Take a look at some of my projects', image: "/images/ydotbakery_main_page.png", background_color: "#2c9f6a"},
-    {url: "/about_me", text: 'Know more about me', image: "/images/pic_of_me.png", background_color: "#fdaf4c"}
+    {url: "/about_me", text: 'Know more about me', image: "/images/pic_of_me_1.png", background_color: "#fdaf4c"}
     // {url: "/learn", text: 'Learn about the existing APIs I did and know how to use them', image: "", background_color: "#4c93fe"}
 ]
 

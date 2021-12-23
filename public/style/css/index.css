@@ -42,7 +42,7 @@ body .container .row .col:nth-child(2) .link {
 body .container .row .col:nth-child(2) .link:hover {
   font-size: 1.2rem;
 }
-body .container .row .col:nth-child(2) .link:hover::after, body .container .row .col:nth-child(2) .link:focus::after {
+body .container .row .col:nth-child(2) .link:after, body .container .row .col:nth-child(2) .link:focus::after {
   content: url("/images/arrow-right-light.svg");
   font-size: 1.2rem;
 }
