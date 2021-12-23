@@ -42,10 +42,6 @@ body .container .row .col:nth-child(2) .link {
 body .container .row .col:nth-child(2) .link:hover {
   font-size: 1.2rem;
 }
-body .container .row .col:nth-child(2) .link:after, body .container .row .col:nth-child(2) .link:focus::after {
-  content: url("/images/arrow-right-light.svg");
-  font-size: 1.2rem;
-}
 body .container .row .col:nth-child(2) .image-frame {
   width: 80%;
   height: auto;
@@ -64,10 +60,6 @@ body .container .row .col:nth-child(2):hover .image-frame {
 }
 body .container .row .col:nth-child(2):hover .link {
   color: #f9f9f9;
-}
-body .container .row .col:nth-child(2):hover .link::after {
-  content: url("/images/arrow-right-light.svg");
-  font-size: 1rem;
 }
 
 @media only screen and (max-width: 1366px) {
