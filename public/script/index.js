@@ -12,7 +12,6 @@ const navigation_url_background = [
 var count_text = 1
 var count_navigation = 1
 var printing_text = false
-// TODO: make function check for printing text disable click.
 
 const start_type = () => {
     console.log("type start")
@@ -21,8 +20,6 @@ const start_type = () => {
     let count = 0;
     printing_text = true
     loop_display_main_text(count, intro_text[count_text % intro_text.length].main_text)
-    loop_display_sub_text(count, intro_text[count_text % intro_text.length].sub_text)
-
 }
 
 const loop_display_main_text = (count, text) => {
@@ -33,8 +30,8 @@ const loop_display_main_text = (count, text) => {
             printing_text = true
             loop_display_main_text(count, text)
         } else 
-            printing_text = false
-    }, 300);
+            loop_display_sub_text(0, intro_text[count_text % intro_text.length].sub_text)
+    }, 150);
 }
 
 const loop_display_sub_text = (count, text) => {
@@ -46,16 +43,7 @@ const loop_display_sub_text = (count, text) => {
             loop_display_sub_text(count, text)
         } else
             printing_text = false
-    }, 100);
-}
-
-const background_change_color = (list_color) => {
-    if (list_color.length === 0) return;
-    $("svg path").attr("fill", list_color[0]);
-    setTimeout(() => {
-        list_color.splice(0, 1);
-        background_change_color(list_color);
-    }, 20);
+    }, 30);
 }
 
 const background_navigation_change = () => {
@@ -69,6 +57,15 @@ const background_navigation_change = () => {
     $(".image").attr("src", selected_data.image);
 
     count_navigation++;
+}
+
+const background_change_color = (list_color) => {
+    if (list_color.length === 0) return;
+    $("svg path").attr("fill", list_color[0]);
+    setTimeout(() => {
+        list_color.splice(0, 1);
+        background_change_color(list_color);
+    }, 20);
 }
 
 $(document).ready(() => {

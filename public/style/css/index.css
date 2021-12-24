@@ -1,53 +1,39 @@
-body {
-  overflow: hidden;
-}
-body .background-overlay {
-  z-index: 1;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-}
-body .background-overlay svg {
-  width: 100%;
-  height: 100%;
-  transition: 0.3 ease-in-out;
-}
-body .container {
+.container {
   height: 100%;
   z-index: 2;
   position: relative;
 }
-body .container .row {
+.container .row {
   height: 100%;
   align-items: center;
 }
-body .container .row .col:nth-child(1) {
+.container .row .col:nth-child(1) {
   flex: 2;
 }
-body .container .row .col:nth-child(1) span, body .container .row .col:nth-child(1) p, body .container .row .col:nth-child(1) strong {
+.container .row .col:nth-child(1) span, .container .row .col:nth-child(1) p, .container .row .col:nth-child(1) strong {
   font-size: 4rem;
   font-family: "Roboto Mono", monospace;
 }
-body .container .row .col:nth-child(2) {
+.container .row .col:nth-child(2) {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   cursor: pointer;
 }
-body .container .row .col:nth-child(2) .link {
+.container .row .col:nth-child(2) .link {
   margin-bottom: 10px;
   font-size: 1rem;
 }
-body .container .row .col:nth-child(2) .link:hover {
+.container .row .col:nth-child(2) .link:hover {
   font-size: 1.2rem;
 }
-body .container .row .col:nth-child(2) .image-frame {
+.container .row .col:nth-child(2) .image-frame {
   width: 80%;
   height: auto;
   transition: 0.3s ease-in-out;
 }
-body .container .row .col:nth-child(2) .image-frame img.image {
+.container .row .col:nth-child(2) .image-frame img.image {
   width: 100%;
   height: auto;
   object-fit: contain;
@@ -56,15 +42,15 @@ body .container .row .col:nth-child(2) .image-frame img.image {
   box-shadow: 4px 4px 10px 2px #333;
   transition: 0.3s ease-in-out;
 }
-body .container .row .col:nth-child(2):hover .image-frame {
+.container .row .col:nth-child(2):hover .image-frame {
   width: 90%;
 }
-body .container .row .col:nth-child(2):hover .image-frame img.image {
+.container .row .col:nth-child(2):hover .image-frame img.image {
   border: 2px solid #f9f9f9;
   border-radius: 16px;
   box-shadow: 4px 4px 10px 2px #f9f9f9;
 }
-body .container .row .col:nth-child(2):hover .link {
+.container .row .col:nth-child(2):hover .link {
   color: #f9f9f9;
 }
 
