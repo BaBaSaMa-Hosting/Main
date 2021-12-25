@@ -19,7 +19,7 @@
 }
 .container .row .col .card {
   width: 30vw;
-  height: 60vh;
+  height: 65vh;
   border: 2px solid #333;
   border-radius: 15px;
   box-shadow: 4px 4px 10px 2px #333;
@@ -51,7 +51,7 @@
 }
 .container .row .col:hover .card {
   width: 33vw;
-  height: 65vh;
+  height: 68vh;
 }
 
 /*# sourceMappingURL=about_me.css.map */

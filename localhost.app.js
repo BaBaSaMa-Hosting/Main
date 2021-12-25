@@ -17,6 +17,9 @@ fastify.get('/about_me', async (request, reply) => {
     reply.code(200).sendFile('about_me.html');
 });
 
+fastify.get('/projects', async (request, reply) => {
+    reply.code(200).sendFile('projects.html');
+});
 
 const start = async() => {
     await fastify.listen(80, '0.0.0.0')

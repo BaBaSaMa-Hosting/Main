@@ -1,0 +1,55 @@
+.container {
+  position: relative;
+  z-index: 2;
+}
+.container #project-type.select-container {
+  position: absolute;
+  width: fit-content;
+  height: 60px;
+  padding: 10px 20px;
+  background-color: #f9f9f9;
+  border-radius: 12px;
+  right: 100px;
+  transition: 0.3s ease-in-out;
+}
+.container #project-type.select-container .select-textbox {
+  height: 40px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+.container #project-type.select-container .select-textbox .text {
+  font-size: 1.2rem;
+  margin: 0 10px 0 0;
+}
+.container #project-type.select-container .select-textbox .icon {
+  display: inline-block;
+  width: 20px;
+  cursor: pointer;
+}
+.container #project-type.select-container .select-dropdown {
+  height: 0;
+  overflow: hidden;
+  transition: 0.3s ease-in-out;
+}
+.container #project-type.select-container .select-dropdown .select-element {
+  min-height: 30px;
+  width: 100%;
+  border-top: 0.8px solid #333;
+  border-bottom: 0.8px solid #333;
+  font-size: 1rem;
+  text-align: center;
+  padding: 10px 0;
+  cursor: pointer;
+}
+.container #project-type.select-container .select-dropdown .select-element:hover, .container #project-type.select-container .select-dropdown .select-element:focus, .container #project-type.select-container .select-dropdown .select-element.active {
+  background-color: #e2e2e2;
+}
+.container #project-type.select-container .select-dropdown.active {
+  height: 130px;
+}
+.container #project-type.select-container.active {
+  height: 200px;
+}
+
+/*# sourceMappingURL=projects.css.map */
