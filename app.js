@@ -19,6 +19,10 @@ fastify.get('/', async (request, reply) => {
     reply.code(200).sendFile('index.html');
 });
 
+fastify.get('/about_me', async (request, reply) => {
+    reply.code(200).sendFile('about_me.html');
+});
+
 fastify.register(vhost, {
     upstream: "http://babasama.com:3002",
     host: 'phantom.babasama.com'
