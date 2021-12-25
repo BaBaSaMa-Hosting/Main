@@ -1,0 +1,57 @@
+.container {
+  position: relative;
+  justify-content: center;
+  align-items: center;
+}
+.container h2, .container p {
+  width: 60%;
+  text-align: center;
+  padding: 10px 20px;
+}
+.container .row {
+  margin-top: 30px;
+}
+.container .row .col {
+  width: auto;
+  height: auto;
+  margin: auto 10px;
+  cursor: pointer;
+}
+.container .row .col .card {
+  width: 30vw;
+  height: 60vh;
+  border: 2px solid #333;
+  border-radius: 15px;
+  box-shadow: 4px 4px 10px 2px #333;
+  display: flex;
+  flex-direction: column;
+  padding: 30px 10px;
+  transition: 0.3s ease-in-out;
+}
+.container .row .col .card .image-header {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.container .row .col .card .image-header .image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.container .row .col .card .card-body .card-title {
+  margin: 0 0 10px;
+  text-align: center;
+}
+.container .row .col .card .card-body p {
+  width: 100%;
+  text-align: center;
+}
+.container .row .col .card .card-body .btn {
+  margin-top: 10px;
+}
+.container .row .col:hover .card {
+  width: 33vw;
+  height: 65vh;
+}
+
+/*# sourceMappingURL=about_me.css.map */

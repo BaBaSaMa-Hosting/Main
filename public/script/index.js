@@ -43,14 +43,13 @@ const loop_display_sub_text = (count, text) => {
             loop_display_sub_text(count, text)
         } else
             printing_text = false
-    }, 30);
+    }, 150);
 }
 
 const background_navigation_change = () => {
     let selected_data = navigation_url_background[count_navigation % navigation_url_background.length];
     let original_bg_color = $("svg path").attr("fill");
     let scale = chroma.scale([original_bg_color, selected_data.background_color]).mode('lch').colors(30);
-
     background_change_color(scale);
     $("#visit").html(selected_data.text);
     $("#visit").attr("href", selected_data.url);
@@ -81,5 +80,9 @@ $(document).ready(() => {
 
     $(".col:nth-child(2)").mouseleave(() => { 
         background_navigation_change();
+    });
+
+    $(".col:nth-child(2)").click(() => { 
+        window.location.href = navigation_url_background[(count_navigation - 1) % navigation_url_background.length].url
     });
 });

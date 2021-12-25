@@ -107,3 +107,4 @@ dist
 *.map
 *.sass
 *.sass
+package-lock.json

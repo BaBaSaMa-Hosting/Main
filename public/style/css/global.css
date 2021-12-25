@@ -37,7 +37,10 @@ body .background-overlay svg {
 }
 
 .container {
+  z-index: 2;
   padding: 0 30px;
+  display: flex;
+  flex-direction: column;
 }
 
 .row {
@@ -45,6 +48,16 @@ body .background-overlay svg {
 }
 .row .col {
   flex: 1;
+}
+
+.btn {
+  width: 100%;
+  padding: 15px 10px;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: bold;
 }
 
 /*# sourceMappingURL=global.css.map */
