@@ -63,19 +63,18 @@ body {
 }
 .container .section-container section {
   width: auto;
+  max-width: calc(100vw - 60px);
   height: auto;
   display: flex;
-  overflow-y: hidden;
-  overflow-x: auto;
   margin-bottom: 10px;
 }
-.container .section-container section .website-element-container, .container .section-container section .app-element-container, .container .section-container section .design-element-container {
+.container .section-container section .swiper .swiper-wrapper .swiper-slide .website-element-container, .container .section-container section .swiper .swiper-wrapper .swiper-slide .app-element-container, .container .section-container section .swiper .swiper-wrapper .swiper-slide .design-element-container {
   position: relative;
   width: 100%;
-  min-width: 100%;
-  height: 65vh;
+  min-width: 100px;
+  height: 80vh;
 }
-.container .section-container section .website-element-container .image, .container .section-container section .app-element-container .image, .container .section-container section .design-element-container .image {
+.container .section-container section .swiper .swiper-wrapper .swiper-slide .website-element-container .image, .container .section-container section .swiper .swiper-wrapper .swiper-slide .app-element-container .image, .container .section-container section .swiper .swiper-wrapper .swiper-slide .design-element-container .image {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -85,7 +84,7 @@ body {
   top: 0;
   z-index: 2;
 }
-.container .section-container section .website-element-container .text-overlay, .container .section-container section .app-element-container .text-overlay, .container .section-container section .design-element-container .text-overlay {
+.container .section-container section .swiper .swiper-wrapper .swiper-slide .website-element-container .text-overlay, .container .section-container section .swiper .swiper-wrapper .swiper-slide .app-element-container .text-overlay, .container .section-container section .swiper .swiper-wrapper .swiper-slide .design-element-container .text-overlay {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -103,23 +102,26 @@ body {
   transition: 0.3s ease-in-out;
   border-radius: 12px;
 }
-.container .section-container section .website-element-container .text-overlay strong, .container .section-container section .website-element-container .text-overlay p, .container .section-container section .app-element-container .text-overlay strong, .container .section-container section .app-element-container .text-overlay p, .container .section-container section .design-element-container .text-overlay strong, .container .section-container section .design-element-container .text-overlay p {
+.container .section-container section .swiper .swiper-wrapper .swiper-slide .website-element-container .text-overlay strong, .container .section-container section .swiper .swiper-wrapper .swiper-slide .website-element-container .text-overlay p, .container .section-container section .swiper .swiper-wrapper .swiper-slide .app-element-container .text-overlay strong, .container .section-container section .swiper .swiper-wrapper .swiper-slide .app-element-container .text-overlay p, .container .section-container section .swiper .swiper-wrapper .swiper-slide .design-element-container .text-overlay strong, .container .section-container section .swiper .swiper-wrapper .swiper-slide .design-element-container .text-overlay p {
   transition: 0.3s ease-in-out;
 }
-.container .section-container section .website-element-container .text-overlay strong, .container .section-container section .app-element-container .text-overlay strong, .container .section-container section .design-element-container .text-overlay strong {
+.container .section-container section .swiper .swiper-wrapper .swiper-slide .website-element-container .text-overlay strong, .container .section-container section .swiper .swiper-wrapper .swiper-slide .app-element-container .text-overlay strong, .container .section-container section .swiper .swiper-wrapper .swiper-slide .design-element-container .text-overlay strong {
   font-size: 1.5rem;
 }
-.container .section-container section .website-element-container .text-overlay p, .container .section-container section .app-element-container .text-overlay p, .container .section-container section .design-element-container .text-overlay p {
+.container .section-container section .swiper .swiper-wrapper .swiper-slide .website-element-container .text-overlay p, .container .section-container section .swiper .swiper-wrapper .swiper-slide .app-element-container .text-overlay p, .container .section-container section .swiper .swiper-wrapper .swiper-slide .design-element-container .text-overlay p {
   font-size: 1rem;
 }
-.container .section-container section .website-element-container .text-overlay:hover, .container .section-container section .app-element-container .text-overlay:hover, .container .section-container section .design-element-container .text-overlay:hover {
+.container .section-container section .swiper .swiper-wrapper .swiper-slide .website-element-container .text-overlay:hover, .container .section-container section .swiper .swiper-wrapper .swiper-slide .app-element-container .text-overlay:hover, .container .section-container section .swiper .swiper-wrapper .swiper-slide .design-element-container .text-overlay:hover {
   background-image: linear-gradient(to top right, #333333, rgba(51, 51, 51, 0.4));
 }
-.container .section-container section .website-element-container .text-overlay:hover strong, .container .section-container section .app-element-container .text-overlay:hover strong, .container .section-container section .design-element-container .text-overlay:hover strong {
+.container .section-container section .swiper .swiper-wrapper .swiper-slide .website-element-container .text-overlay:hover strong, .container .section-container section .swiper .swiper-wrapper .swiper-slide .app-element-container .text-overlay:hover strong, .container .section-container section .swiper .swiper-wrapper .swiper-slide .design-element-container .text-overlay:hover strong {
   font-size: 1.7rem;
 }
-.container .section-container section .website-element-container .text-overlay:hover p, .container .section-container section .app-element-container .text-overlay:hover p, .container .section-container section .design-element-container .text-overlay:hover p {
+.container .section-container section .swiper .swiper-wrapper .swiper-slide .website-element-container .text-overlay:hover p, .container .section-container section .swiper .swiper-wrapper .swiper-slide .app-element-container .text-overlay:hover p, .container .section-container section .swiper .swiper-wrapper .swiper-slide .design-element-container .text-overlay:hover p {
   font-size: 1.2rem;
+}
+.container .section-container section .swiper .swiper-button-next, .container .section-container section .swiper .swiper-button-prev {
+  color: #80c5a5;
 }
 
 /*# sourceMappingURL=projects.css.map */

@@ -60,4 +60,9 @@ body .background-overlay svg {
   font-weight: bold;
 }
 
+.image {
+  width: 100%;
+  object-fit: contain;
+}
+
 /*# sourceMappingURL=global.css.map */
