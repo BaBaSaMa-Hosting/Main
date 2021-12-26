@@ -8,7 +8,8 @@ body {
   width: 100vw;
   height: 100vh;
   font-family: "Fira Sans", sans-serif;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 body .background-overlay {
   z-index: 1;
@@ -41,6 +42,11 @@ body .background-overlay svg {
   padding: 0 30px;
   display: flex;
   flex-direction: column;
+  transition: 0.3s ease-in-out;
+}
+
+.container.nav-active {
+  margin-top: 270px;
 }
 
 .row {

@@ -54,4 +54,33 @@
   height: 68vh;
 }
 
+@media only screen and (max-width: 810px) {
+  .container h2, .container p {
+    width: 76%;
+  }
+  .container .row {
+    flex-direction: column;
+  }
+  .container .row .col {
+    margin-bottom: 10px;
+  }
+  .container .row .col .card {
+    width: 100%;
+  }
+}
+@media only screen and (max-width: 530px) {
+  .container h2, .container p {
+    width: 90%;
+  }
+  .container .row {
+    flex-direction: column;
+  }
+  .container .row .col {
+    margin-bottom: 10px;
+  }
+  .container .row .col .card {
+    width: 100%;
+  }
+}
+
 /*# sourceMappingURL=about_me.css.map */

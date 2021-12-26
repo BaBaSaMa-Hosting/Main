@@ -13,6 +13,12 @@
   font-family: "Roboto Mono", monospace;
   cursor: pointer;
 }
+#navbar .navbar-container button.navbar-menu {
+  display: none;
+  width: 35px;
+  background: transparent;
+  cursor: hover;
+}
 #navbar .navbar-container ul.navbar-list {
   display: flex;
   justify-content: space-evenly;
@@ -27,6 +33,30 @@
 @media only screen and (max-width: 1366px) {
   li.navbar-item a.link {
     font-size: 1.2rem !important;
+  }
+}
+@media only screen and (max-width: 640px) {
+  #navbar {
+    padding-top: 20px;
+  }
+  #navbar .navbar-container {
+    position: relative;
+  }
+  #navbar .navbar-container button.navbar-menu {
+    display: block;
+  }
+  #navbar .navbar-container ul.navbar-list {
+    display: none;
+    position: absolute;
+    flex-direction: column;
+    right: 30px;
+    top: 30px;
+  }
+  #navbar .navbar-container ul.navbar-list li.navbar-item {
+    text-align: right;
+  }
+  #navbar .navbar-container.active ul.navbar-list {
+    display: flex;
   }
 }
 
