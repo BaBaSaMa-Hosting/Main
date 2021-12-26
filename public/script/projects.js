@@ -1,8 +1,9 @@
 var href = document.location.href;
 
 const scroll_to_elemt = () => {
+    if (!href.includes("#")) return;
     let target_elemt = href.split("#")[1];
-    document.querySelector(`#${target_elemt}`).scrollIntoView();
+    document.querySelector(`#${target_elemt}`).scrollIntoView({block: 'start', behavior: 'smooth'});
 }
 
 $(document).ready(() => {

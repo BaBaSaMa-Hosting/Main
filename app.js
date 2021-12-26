@@ -23,6 +23,14 @@ fastify.get('/about_me', async (request, reply) => {
     reply.code(200).sendFile('about_me.html');
 });
 
+fastify.get('/projects', async (request, reply) => {
+    reply.code(200).sendFile('projects.html');
+});
+
+fastify.get('/learn', async (request, reply) => {
+    reply.code(200).sendFile('learn.html');
+});
+
 fastify.register(vhost, {
     upstream: "http://babasama.com:3002",
     host: 'phantom.babasama.com'

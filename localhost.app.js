@@ -21,6 +21,10 @@ fastify.get('/projects', async (request, reply) => {
     reply.code(200).sendFile('projects.html');
 });
 
+fastify.get('/learn', async (request, reply) => {
+    reply.code(200).sendFile('learn.html');
+});
+
 const start = async() => {
     await fastify.listen(80, '0.0.0.0')
     .then((address) => console.log(`server is listening on ${address}`))

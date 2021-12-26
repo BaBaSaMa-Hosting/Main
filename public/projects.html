@@ -23,6 +23,7 @@
     <link rel="stylesheet" href="/style/css/nav.css">
     <link rel="stylesheet" href="/style/css/projects.css">
 
+    <script src="/script/global.js"></script>
     <script src="/script/nav.js"></script>
     <script src="/script/projects.js"></script>
 </head>
@@ -44,16 +45,16 @@
 
             <ul class="navbar-list">
                 <li class="navbar-item">
-                    <a href="#" class="link">Learn</a>
+                    <a href="/learn" class="link">Learn</a>
                 </li>
                 <li class="navbar-item">
-                    <a href="#" class="link">Projects</a>
+                    <a href="/projects" class="link">Projects</a>
                 </li>
                 <li class="navbar-item">
-                    <a href="#" class="link">About Me</a>
+                    <a href="/about_me" class="link">About Me</a>
                 </li>
                 <li class="navbar-item">
-                    <a href="#" class="link">Repos</a>
+                    <a href="https://github.com/Ju-Long" target="_blank" class="link">Repos</a>
                 </li>
             </ul>
         </div>
@@ -80,15 +81,40 @@
             </div>
         </div>
 
-        <section id="Websites">
-
-        </section>
-        <section id="Apps">
-
-        </section>
-        <section id="Designs">
-
-        </section>
+        <div class="section-container">
+            <section id="Websites">
+                <div class="website-element-container" onclick="{window.open('https://www.ydotbakery.com', '_blank')}">
+                    <img class="image" src="/images/ydotbakery.com.png">
+                    <div class="text-overlay">
+                        <strong>ydotbakery.com</strong>
+                        <p>an website selling home-made cookies in Singapore.</p>
+                    </div>
+                </div>
+                <div class="website-element-container" onclick="{window.open('https://www.jiujigongforall.com', '_blank')}">
+                    <img class="image" src="/images/jiujigongforall.com.png">
+                    <div class="text-overlay">
+                        <strong>jiujigongforall.com</strong>
+                        <p>an website selling health suppliments in Singapore.</p>
+                    </div>
+                </div>
+            </section>
+            <section id="Apps">
+                <div class="app-element-container">
+                    <img class="image" src="">
+                    <div class="text-overlay">
+                        
+                    </div>
+                </div>
+            </section>
+            <section id="Designs">
+                <div class="design-element-container">
+                    <img class="image" src="">
+                    <div class="text-overlay">
+                        
+                    </div>
+                </div>
+            </section>
+        </div>
     </div>
 </body>
 
