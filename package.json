@@ -35,6 +35,7 @@
     "path": "^0.12.7",
     "phantom": "^6.3.0",
     "serve-static": "^1.14.1",
+    "uuid": "^8.3.2",
     "x-xss-protection": "^2.0.0"
   }
 }
