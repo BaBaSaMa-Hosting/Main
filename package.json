@@ -11,6 +11,7 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
+    "@sendgrid/mail": "^7.6.0",
     "child_process": "^1.0.2",
     "cors": "^2.8.5",
     "dns-prefetch-control": "^0.3.0",
