@@ -10,6 +10,14 @@ const fastify = require('fastify') ({
     }
 });
 
+const fastify_http = require('fastify') ({
+    logger: true
+});
+
+fastify_http.get('/', async (request, reply) => {
+    reply.redirect("https://www.babasama.com")
+});
+
 fastify.register(require('fastify-static'), {
     root: path.join(__dirname, 'public'),
     prefix: '/'
@@ -56,6 +64,13 @@ const start = async() => {
     await fastify.register(require('middie'))
     fastify.use(require('cors')())
     await fastify.listen(443, '0.0.0.0')
+    .then((address) => console.log(`server is listening on ${address}`))
+    .catch(err => {
+        console.log('error starting server: ', err);
+        process.exit(1);
+    });
+
+    await fastify_http.listen(80, '0.0.0.0')
     .then((address) => console.log(`server is listening on ${address}`))
     .catch(err => {
         console.log('error starting server: ', err);
