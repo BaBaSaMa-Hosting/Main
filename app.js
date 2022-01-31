@@ -41,7 +41,7 @@ fastify.get('/learn', async (request, reply) => {
 
 fastify.register(vhost, {
     upstream: "http://babasama.com:3001",
-    host: 'home_management.babasama.com'
+    host: 'home-management.babasama.com'
 });
 
 fastify.register(vhost, {
