@@ -29,10 +29,17 @@ fastify.register(require('fastify-static'), {
 });
 
 fastify.addHook('preParsing', async (request, reply, payload) => {
-    console.log("request: ", request);
-    console.log("payload: ", payload);
+    let new_payload = payload;
 
-    return payload;
+    if (request.hostname.includes("babasama.com")) {
+        new_payload.server.key = fs.readFileSync(BABASAMA_COM_KEY_PATH);
+        new_payload.server.cert = fs.readFileSync(BABASAMA_COM_CERT_PATH);
+    } else if (request.hostname.includes("home-management.app")) {
+        new_payload.server.key = fs.readFileSync(HOMEMANAGEMENT_APP_KEY_PATH);
+        new_payload.server.cert = fs.readFileSync(HOMEMANAGEMENT_APP_CERT_PATH);
+    }
+
+    return new_payload;
 })
 
 fastify.get('/', async (request, reply) => {
