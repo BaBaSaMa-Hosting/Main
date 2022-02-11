@@ -8,8 +8,6 @@ const path = require('path');
 const vhost = require('fastify-vhost');
 const https = require('https');
 const serverFactory = (handler, opts) => {
-    t.ok(opts.serverFactory)
-
     console.log(handler);
 
     const options = {
