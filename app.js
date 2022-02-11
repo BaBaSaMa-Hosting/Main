@@ -15,8 +15,9 @@ const fastify_http = require('fastify') ({
 });
 
 fastify_http.get('/', async (request, reply) => {
-    console.log(request.hostname);
-    reply.redirect("https://www.babasama.com")
+    if (request.hostname === "babasama.com") {
+        reply.redirect(`https://www.${request.hostname}`)
+    }
 });
 
 fastify.register(require('fastify-static'), {
