@@ -6,24 +6,9 @@ const HOMEMANAGEMENT_APP_CERT_PATH = '/etc/letsencrypt/live/home-management.app/
 const fs = require('fs');
 const path = require('path');
 const vhost = require('fastify-vhost');
-const https = require('https');
-const serverFactory = (handler, opts) => {
-    console.log(handler);
-    console.log(opts);
-
-    const options = {
-        key: fs.readFileSync(BABASAMA_COM_KEY_PATH),
-        cert: fs.readFileSync(BABASAMA_COM_CERT_PATH)
-    }
-
-    const server = https.createServer(options, (req, res) => {
-        handler(req, res)
-    })
-
-    return server
-}
-
-const fastify = require('fastify') ({logger: true, serverFactory});
+const fastify = require('fastify')({
+    logger: true
+});
 
 const fastify_http = require('fastify')({
     logger: true
@@ -37,6 +22,13 @@ fastify.register(require('fastify-static'), {
     root: path.join(__dirname, 'public'),
     prefix: '/'
 });
+
+fastify.addHook('preParsing', async (request, reply, payload) => {
+    console.log("request: ", request);
+    console.log("payload: ", payload);
+
+    return payload;
+})
 
 fastify.get('/', async (request, reply) => {
     reply.code(200).sendFile('index.html');
