@@ -9,6 +9,7 @@ const vhost = require('fastify-vhost');
 const https = require('https');
 const serverFactory = (handler, opts) => {
     console.log(handler);
+    console.log(opts);
 
     const options = {
         key: fs.readFileSync(BABASAMA_COM_KEY_PATH),
