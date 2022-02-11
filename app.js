@@ -7,7 +7,12 @@ const fs = require('fs');
 const path = require('path');
 const vhost = require('fastify-vhost');
 const fastify = require('fastify')({
-    logger: true
+    logger: true,
+    https: {
+        allowHTTP1: true,
+        key: fs.readFileSync(BABASAMA_COM_KEY_PATH),
+        cert: fs.readFileSync(BABASAMA_COM_CERT_PATH)
+    }
 });
 
 const fastify_http = require('fastify')({
