@@ -1,23 +1,37 @@
+const BABASAMA_COM_KEY_PATH = '/etc/letsencrypt/live/babasama.com/privkey.pem';
+const BABASAMA_COM_CERT_PATH = '/etc/letsencrypt/live/babasama.com/fullchain.pem';
+const HOMEMANAGEMENT_APP_KEY_PATH = '/etc/letsencrypt/live/home-management.app/privkey.pem';
+const HOMEMANAGEMENT_APP_CERT_PATH = '/etc/letsencrypt/live/home-management.app/fullchain.pem';
+
 const fs = require('fs');
 const path = require('path');
 const vhost = require('fastify-vhost');
-const fastify = require('fastify') ({
-    logger: true,
-    https: {
-        allowHTTP1: true,
-        key: fs.readFileSync('/etc/letsencrypt/live/babasama.com/privkey.pem'),
-        cert: fs.readFileSync('/etc/letsencrypt/live/babasama.com/fullchain.pem')
-    }
-});
+const https = require('https');
+const serverFactory = (handler, opts) => {
+    t.ok(opts.serverFactory)
 
-const fastify_http = require('fastify') ({
+    console.log(handler);
+
+    const options = {
+        key: fs.readFileSync(BABASAMA_COM_KEY_PATH),
+        cert: fs.readFileSync(BABASAMA_COM_CERT_PATH)
+    }
+
+    const server = https.createServer(options, (req, res) => {
+        handler(req, res)
+    })
+
+    return server
+}
+
+const fastify = require('fastify') ({logger: true, serverFactory});
+
+const fastify_http = require('fastify')({
     logger: true
 });
 
 fastify_http.get('/', async (request, reply) => {
-    if (request.hostname === "babasama.com") {
-        reply.redirect(`https://www.${request.hostname}`)
-    }
+    reply.redirect(`https://${request.hostname}`)
 });
 
 fastify.register(require('fastify-static'), {
@@ -61,21 +75,21 @@ fastify.register(vhost, {
     host: 'storage.babasama.com'
 });
 
-const start = async() => {
+const start = async () => {
     await fastify.register(require('middie'))
     fastify.use(require('cors')())
     await fastify.listen(443, '0.0.0.0')
-    .then((address) => console.log(`server is listening on ${address}`))
-    .catch(err => {
-        console.log('error starting server: ', err);
-        process.exit(1);
-    });
+        .then((address) => console.log(`server is listening on ${address}`))
+        .catch(err => {
+            console.log('error starting server: ', err);
+            process.exit(1);
+        });
 
     await fastify_http.listen(80, '0.0.0.0')
-    .then((address) => console.log(`server is listening on ${address}`))
-    .catch(err => {
-        console.log('error starting server: ', err);
-        process.exit(1);
-    });
+        .then((address) => console.log(`server is listening on ${address}`))
+        .catch(err => {
+            console.log('error starting server: ', err);
+            process.exit(1);
+        });
 }
 start();
