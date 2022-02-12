@@ -10,8 +10,8 @@ const fastify = require('fastify')({
     logger: true,
     https: {
         allowHTTP1: true,
-        key: fs.readFileSync(BABASAMA_COM_KEY_PATH),
-        cert: fs.readFileSync(BABASAMA_COM_CERT_PATH)
+        key: fs.readFileSync(HOMEMANAGEMENT_APP_KEY_PATH),
+        cert: fs.readFileSync(HOMEMANAGEMENT_APP_CERT_PATH)
     }
 });
 
@@ -59,10 +59,10 @@ fastify.get('/learn', async (request, reply) => {
     reply.code(200).sendFile('learn.html');
 });
 
-fastify.register(vhost, {
-    upstream: "http://babasama.com:3001",
-    host: 'home-management.app'
-});
+// fastify.register(vhost, {
+//     upstream: "http://babasama.com:3001",
+//     host: 'home-management.app'
+// });
 
 fastify.register(vhost, {
     upstream: "http://babasama.com:3002",
