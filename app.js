@@ -26,7 +26,7 @@ fastify.register(require('fastify-static'), {
     prefix: '/'
 });
 
-fastify.addHook('preParsing', async (request, reply, payload) => {
+fastify.addHook('preParsing', async (request, reply, payload, done) => {
     let new_payload = payload;
     if (request.hostname.includes("babasama.com")) {
         console.log("update payload to babasama");
@@ -38,7 +38,7 @@ fastify.addHook('preParsing', async (request, reply, payload) => {
         new_payload.socket.server.cert = fs.readFileSync(HOMEMANAGEMENT_APP_CERT_PATH);
     }
 
-    return new_payload;
+    done(null, new_payload);
 })
 
 fastify.get('/', async (request, reply) => {
