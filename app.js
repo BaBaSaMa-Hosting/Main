@@ -31,9 +31,11 @@ fastify.register(require('fastify-static'), {
 fastify.addHook('preParsing', async (request, reply, payload) => {
     let new_payload = payload;
     if (request.hostname.includes("babasama.com")) {
+        console.log("update payload to babasama");
         new_payload.socket.server.key = fs.readFileSync(BABASAMA_COM_KEY_PATH);
         new_payload.socket.server.cert = fs.readFileSync(BABASAMA_COM_CERT_PATH);
     } else if (request.hostname.includes("home-management.app")) {
+        console.log("update payload to home management");
         new_payload.socket.server.key = fs.readFileSync(HOMEMANAGEMENT_APP_KEY_PATH);
         new_payload.socket.server.cert = fs.readFileSync(HOMEMANAGEMENT_APP_CERT_PATH);
     }
