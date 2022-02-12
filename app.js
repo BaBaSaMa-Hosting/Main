@@ -9,7 +9,9 @@ const vhost = require('fastify-vhost');
 const fastify = require('fastify')({
     logger: true,
     https: {
-        allowHTTP1: true
+        allowHTTP1: true,
+        key: fs.readFileSync(BABASAMA_COM_KEY_PATH),
+        cert: fs.readFileSync(BABASAMA_COM_CERT_PATH)
     }
 });
 
@@ -26,21 +28,6 @@ fastify.register(require('fastify-static'), {
     prefix: '/'
 });
 
-fastify.addHook('preParsing', async (request, reply, payload, done) => {
-    let new_payload = payload;
-    if (request.hostname.includes("babasama.com")) {
-        console.log("update payload to babasama");
-        new_payload.socket.server.key = fs.readFileSync(BABASAMA_COM_KEY_PATH);
-        new_payload.socket.server.cert = fs.readFileSync(BABASAMA_COM_CERT_PATH);
-    } else if (request.hostname.includes("home-management.app")) {
-        console.log("update payload to home management");
-        new_payload.socket.server.key = fs.readFileSync(HOMEMANAGEMENT_APP_KEY_PATH);
-        new_payload.socket.server.cert = fs.readFileSync(HOMEMANAGEMENT_APP_CERT_PATH);
-    }
-
-    done(null, new_payload);
-})
-
 fastify.get('/', async (request, reply) => {
     reply.code(200).sendFile('index.html');
 });
@@ -56,11 +43,6 @@ fastify.get('/projects', async (request, reply) => {
 fastify.get('/learn', async (request, reply) => {
     reply.code(200).sendFile('learn.html');
 });
-
-// fastify.register(vhost, {
-//     upstream: "http://babasama.com:3001",
-//     host: 'home-management.app'
-// });
 
 fastify.register(vhost, {
     upstream: "http://babasama.com:3002",
