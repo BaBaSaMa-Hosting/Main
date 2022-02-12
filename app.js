@@ -1,7 +1,5 @@
 const BABASAMA_COM_KEY_PATH = '/etc/letsencrypt/live/babasama.com/privkey.pem';
 const BABASAMA_COM_CERT_PATH = '/etc/letsencrypt/live/babasama.com/fullchain.pem';
-const HOMEMANAGEMENT_APP_KEY_PATH = '/etc/letsencrypt/live/home-management.app/privkey.pem';
-const HOMEMANAGEMENT_APP_CERT_PATH = '/etc/letsencrypt/live/home-management.app/fullchain.pem';
 
 const fs = require('fs');
 const path = require('path');
@@ -74,11 +72,11 @@ const start = async () => {
             process.exit(1);
         });
 
-    // await fastify_http.listen(80, '0.0.0.0')
-    //     .then((address) => console.log(`server is listening on ${address}`))
-    //     .catch(err => {
-    //         console.log('error starting server: ', err);
-    //         process.exit(1);
-    //     });
+    await fastify_http.listen(80, '0.0.0.0')
+        .then((address) => console.log(`server is listening on ${address}`))
+        .catch(err => {
+            console.log('error starting server: ', err);
+            process.exit(1);
+        });
 }
 start();
