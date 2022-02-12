@@ -94,11 +94,11 @@ const start = async () => {
             process.exit(1);
         });
 
-    await fastify_http.listen(80, '0.0.0.0')
-        .then((address) => console.log(`server is listening on ${address}`))
-        .catch(err => {
-            console.log('error starting server: ', err);
-            process.exit(1);
-        });
+    // await fastify_http.listen(80, '0.0.0.0')
+    //     .then((address) => console.log(`server is listening on ${address}`))
+    //     .catch(err => {
+    //         console.log('error starting server: ', err);
+    //         process.exit(1);
+    //     });
 }
 start();
