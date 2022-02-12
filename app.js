@@ -30,8 +30,6 @@ fastify.register(require('fastify-static'), {
 
 fastify.addHook('preParsing', async (request, reply, payload) => {
     let new_payload = payload;
-
-    console.log(payload);
     if (request.hostname.includes("babasama.com")) {
         new_payload.socket.server.key = fs.readFileSync(BABASAMA_COM_KEY_PATH);
         new_payload.socket.server.cert = fs.readFileSync(BABASAMA_COM_CERT_PATH);
@@ -57,6 +55,11 @@ fastify.get('/projects', async (request, reply) => {
 
 fastify.get('/learn', async (request, reply) => {
     reply.code(200).sendFile('learn.html');
+});
+
+fastify.register(vhost, {
+    upstream: "http://babasama.com:3001",
+    host: 'home-management.app'
 });
 
 fastify.register(vhost, {
