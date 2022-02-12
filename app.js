@@ -9,9 +9,7 @@ const vhost = require('fastify-vhost');
 const fastify = require('fastify')({
     logger: true,
     https: {
-        allowHTTP1: true,
-        key: fs.readFileSync(HOMEMANAGEMENT_APP_KEY_PATH),
-        cert: fs.readFileSync(HOMEMANAGEMENT_APP_CERT_PATH)
+        allowHTTP1: true
     }
 });
 
