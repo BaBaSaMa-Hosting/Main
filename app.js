@@ -42,10 +42,10 @@ fastify.get('/learn', async (request, reply) => {
     reply.code(200).sendFile('learn.html');
 });
 
-fastify.register(vhost, {
-    upstream: "http://babasama.com:3001",
-    host: 'home-management.babasama.com'
-});
+// fastify.register(vhost, {
+//     upstream: "http://babasama.com:3001",
+//     host: 'home-management.babasama.com'
+// });
 
 fastify.register(vhost, {
     upstream: "http://babasama.com:3002",
