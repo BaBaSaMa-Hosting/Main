@@ -26,7 +26,9 @@ fastify.register(require('fastify-static'), {
 });
 
 fastify.addHook('onRequest', async (request, reply) => {
-    console.log(request);
+    if (request.raw.socket.servername === "home-management.app") {
+        return reply.redirect(`https://home-management.app:3001${request.raw.url}`);
+    }
 })
 
 fastify.get('/', async (request, reply) => {
