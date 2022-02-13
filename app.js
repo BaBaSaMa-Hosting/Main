@@ -70,14 +70,14 @@ fastify.register(vhost, {
 const start = async () => {
     await fastify.register(require('middie'))
     fastify.use(require('cors')())
-    await fastify.listen(443, '0.0.0.0')
+    await fastify.listen(443, '192.168.1.22')
         .then((address) => console.log(`server is listening on ${address}`))
         .catch(err => {
             console.log('error starting server: ', err);
             process.exit(1);
         });
 
-    await fastify_http.listen(80, '0.0.0.0')
+    await fastify_http.listen(80, '192.168.1.22')
         .then((address) => console.log(`server is listening on ${address}`))
         .catch(err => {
             console.log('error starting server: ', err);
