@@ -4,6 +4,9 @@ const BABASAMA_COM_CERT_PATH = '/etc/letsencrypt/live/babasama.com/fullchain.pem
 const fs = require('fs');
 const path = require('path');
 const vhost = require('fastify-vhost');
+const fastify_http = require('fastify')({
+    logger: true
+});
 const fastify = require('fastify')({
     logger: true,
     https: {
@@ -13,11 +16,7 @@ const fastify = require('fastify')({
     }
 });
 
-const fastify_http = require('fastify')({
-    logger: true
-});
-
-fastify_http.get('/', async (request, reply) => {
+fastify_http.get("/", async (request, reply) => {
     reply.redirect(`https://${request.hostname}`)
 });
 
@@ -25,6 +24,10 @@ fastify.register(require('fastify-static'), {
     root: path.join(__dirname, 'public'),
     prefix: '/'
 });
+
+fastify.addHook('onRequest', async (request, reply) => {
+    console.log(request);
+})
 
 fastify.get('/', async (request, reply) => {
     reply.code(200).sendFile('index.html');
@@ -41,11 +44,6 @@ fastify.get('/projects', async (request, reply) => {
 fastify.get('/learn', async (request, reply) => {
     reply.code(200).sendFile('learn.html');
 });
-
-// fastify.register(vhost, {
-//     upstream: "http://babasama.com:3001",
-//     host: 'home-management.babasama.com'
-// });
 
 fastify.register(vhost, {
     upstream: "http://babasama.com:3002",
@@ -70,14 +68,14 @@ fastify.register(vhost, {
 const start = async () => {
     await fastify.register(require('middie'))
     fastify.use(require('cors')())
-    await fastify.listen(443, '192.168.1.22')
+    await fastify.listen(443, '0.0.0.0')
         .then((address) => console.log(`server is listening on ${address}`))
         .catch(err => {
             console.log('error starting server: ', err);
             process.exit(1);
         });
 
-    await fastify_http.listen(80, '192.168.1.22')
+    await fastify_http.listen(80, '0.0.0.0')
         .then((address) => console.log(`server is listening on ${address}`))
         .catch(err => {
             console.log('error starting server: ', err);
