@@ -13,6 +13,3 @@
 [submodule "Storage"]
 	path = Storage
 	url = https://github.com/BaBaSaMa-Hosting/Storage.git
-[submodule "Home-Management"]
-	path = Home-Management
-	url = https://github.com/BaBaSaMa-Hosting/Home-Management.git
