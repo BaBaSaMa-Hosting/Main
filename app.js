@@ -52,26 +52,6 @@ fastify.register(vhost, {
     host: 'home-management.babasama.com'
 });
 
-fastify.register(vhost, {
-    upstream: "http://babasama.com:3002",
-    host: 'phantom.babasama.com'
-});
-
-fastify.register(vhost, {
-    upstream: "http://babasama.com:3003",
-    host: 'api.babasama.com'
-});
-
-fastify.register(vhost, {
-    upstream: "http://babasama.com:3004",
-    host: 'notification.babasama.com'
-});
-
-fastify.register(vhost, {
-    upstream: "http://babasama.com:3005",
-    host: 'storage.babasama.com'
-});
-
 const start = async () => {
     await fastify.register(require('middie'))
     fastify.use(require('cors')())
