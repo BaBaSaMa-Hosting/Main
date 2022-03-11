@@ -1,6 +1,6 @@
 echo "Starting Script"
 
-sudo yarn
+sudo npm i
 sudo forever start ./app.js
 sudo forever list
 

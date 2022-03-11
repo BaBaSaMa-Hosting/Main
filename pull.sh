@@ -1,7 +1,7 @@
 echo 'Starting Git Pull'
 
 sudo git pull
-sudo yarn
+sudo npm i
 sudo forever restartall
 sudo forever list
 
