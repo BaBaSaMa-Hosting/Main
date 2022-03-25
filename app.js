@@ -52,6 +52,11 @@ fastify.register(vhost, {
     host: 'home-management.babasama.com'
 });
 
+fastify.register(vhost, {
+    upstream: "http://babasama.com:35566",
+    host: 'minio.babasama.com'
+});
+
 const start = async () => {
     await fastify.register(require('middie'))
     fastify.use(require('cors')())
