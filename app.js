@@ -32,7 +32,7 @@ fastify.register(vhost, {
 const start = async () => {
     await fastify.register(require('middie'))
     fastify.use(require('cors')())
-    await fastify.listen(3000, '0.0.0.0')
+    await fastify.listen(3001, '0.0.0.0')
         .then((address) => console.log(`server is listening on ${address}`))
         .catch(err => {
             console.log('error starting server: ', err);
