@@ -24,11 +24,6 @@ fastify.get('/learn', async (request, reply) => {
     reply.code(200).sendFile('learn.html');
 });
 
-fastify.register(vhost, {
-    upstream: "http://babasama.com:35566",
-    host: 'minio.babasama.com'
-});
-
 const start = async () => {
     await fastify.register(require('middie'))
     fastify.use(require('cors')())
