@@ -1,4 +1,5 @@
 const path = require('path');
+const vhost = require('fastify-vhost');
 const fastify = require('fastify')({
     logger: true
 });
@@ -22,6 +23,11 @@ fastify.get('/projects', async (request, reply) => {
 
 fastify.get('/learn', async (request, reply) => {
     reply.code(200).sendFile('learn.html');
+});
+
+fastify.register(vhost, {
+    upstream: "http://babasama.com:3002",
+    host: 'bus.babasama.com'
 });
 
 const start = async () => {
